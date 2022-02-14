@@ -1,0 +1,11 @@
+<h1>Welcome to The Gossip Project!</h1></br>
+<h3>Hey! What's up my <strong>nigga</strong>?</h3></br>
+
+
+
+    <p> <% @gossips.each_with_index do |gossip,index| %>
+      <%= gossip.user.first_name %> <%= gossip.user.last_name %> has written : <strong><%= gossip.title %></strong><br>
+      Retrouvez la page de ce gossip et les infos sur sont auteur <a href="/gossips/<%= (index+1) %>">ici</a>.</br>
+      _________________________________________________________</br>
+      <% end %>
+    </p>
