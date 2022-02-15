@@ -18,4 +18,8 @@ class PagesController < ApplicationController
     @gossips = Gossip.all
   end
 
+  def gossips
+    @gossips = Gossip.all
+    @id = params[:id]
+  end
 end

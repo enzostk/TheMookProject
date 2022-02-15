@@ -1,0 +1,13 @@
+<div>
+  <% @gossips.each do |gossip| %>
+  <% if gossip.id == @id.to_i %>
+  <h3><%= gossip.user.first_name %> <%= gossip.user.last_name %></h3><br/>
+  <p><strong><%= gossip.title %></strong></p><br/>
+  <p><%= gossip.content %></p><br/>
+  <p><small>Gossip written at <%= gossip.created_at %>.</small></p>
+  <% end %>
+  <% end %>
+
+  <a href="<%= root_path %>">Back to Home</a>
+
+</div>
