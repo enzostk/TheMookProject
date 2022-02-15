@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/team', to: 'pages#team', as: 'team'
   get '/contact', to: 'pages#contact', as: 'contact'
   get '/gossips/:id', to: 'pages#gossips', as: 'gossips'
+  resources :gossips
 end
