@@ -1,11 +1,9 @@
 class PagesController < ApplicationController
 
-  def team   
-
+  def team  
   end
 
   def contact
-
   end
 
   def home
@@ -18,7 +16,7 @@ class PagesController < ApplicationController
     @gossips = Gossip.all
   end
 
-  def gossips
+  def potins
     @gossips = Gossip.all
     @id = params[:id]
   end

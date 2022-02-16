@@ -1,11 +1,14 @@
 <h1>Welcome to The Gossip Project!</h1></br>
 <h3>Hey! What's up my <strong>nigga</strong>?</h3></br>
 
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 
+<button>Send us your best gossip</button></br></br>
 
     <p> <% @gossips.each_with_index do |gossip,index| %>
       <%= gossip.user.first_name %> <%= gossip.user.last_name %> has written : <strong><%= gossip.title %></strong><br>
-      Retrouvez la page de ce gossip et les infos sur sont auteur <a href="/gossips/<%= gossip.id %>">ici</a>.</br>
+      Find the page of this gossip and the info on his author <a href="/potins/<%= gossip.id %>">here</a>.</br>
       _________________________________________________________</br>
       <% end %>
     </p>
