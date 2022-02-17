@@ -38,7 +38,7 @@ end
 #Création de 20 gossips liés avec User
 20.times do
   gossip = Gossip.create!(
-    title: Faker::Lorem.sentence,
+    title: Faker::Lorem.sentence(number: 10),
     content: Faker::Lorem.paragraph,
     user_id: User.all.sample.id,
     tag_id: Tag.all.sample.id

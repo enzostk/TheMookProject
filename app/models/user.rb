@@ -12,4 +12,6 @@ class User < ApplicationRecord
     presence: true
   validates :age,
     presence: true
+
+    has_secure_password
 end

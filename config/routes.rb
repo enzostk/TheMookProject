@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/team', to: 'pages#team', as: 'team'
   get '/contact', to: 'pages#contact', as: 'contact'
   get '/potins/:id', to: 'pages#potins', as: 'potins'
-  resources :gossips, only: [:new, :create]
+  resources :gossips
+  resources :users
 end

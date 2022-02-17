@@ -1,13 +1,17 @@
-<div>
+<body>
   <% @gossips.each do |gossip| %>
-  <% if gossip.id == @id.to_i %>
-  <h3><%= gossip.user.first_name %> <%= gossip.user.last_name %></h3><br/>
-  <p><strong><%= gossip.title %></strong></p><br/>
-  <p><%= gossip.content %></p><br/>
-  <p><small>Gossip written at <%= gossip.created_at %>.</small></p>
+    <% if gossip.id == @id.to_i %>
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4"><%= gossip.user.first_name %> <%= gossip.user.last_name %></h1><br/>
+          <h3 class="display-6 font-italic"><strong><%= gossip.title %></strong><br/></h3>
+          <p class="lead my-3"><%= gossip.content %><br/></p>
+          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold"><small>Gossip written at <%= gossip.created_at %>.</small></a></p>
+    <% end %>
   <% end %>
-  <% end %>
-
-  <a href="<%= root_path %>">Back to Home</a>
-
-</div>
+  
+  <a href="<%= root_path %>" class="btn btn-primary">Back to Home</a> <a href="/gossips/<%= @id  %>/edit" class="btn btn-primary">Edit gossip</a> <a href="/user/<%= @id  %>/edit" class="btn btn-primary">Hot user</a>
+       
+        </div>
+    </div>
+</body>    

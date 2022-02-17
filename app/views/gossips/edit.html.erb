@@ -1,0 +1,20 @@
+<h1>Edit gossip</h1>
+
+<%= form_for @gossip do |f| %>
+
+  <div class ="form-group">
+    <label>Gossip's title</label>
+    <%= f.text_area :title,class:'form-control' %>
+  </div>
+
+  <div class ="form-group">
+    <label>Gossip's content</label>
+    <%= f.text_area :content,class:'form-control' %>
+  </div>
+
+  <div class ="form-group">
+    <button type="submit" class="btn btn-primary"> Edit gossip</button> 
+    <a href="/gossips/<%= @id %>/destroy" class="btn btn-danger" data-confirm="Are you sure?" data-method="DELETE">Destroy gossip</a>
+  </div>
+
+<% end %>

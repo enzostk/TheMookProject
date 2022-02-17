@@ -1,14 +1,31 @@
-<h1>Welcome to The Gossip Project!</h1></br>
-<h3>Hey! What's up my <strong>nigga</strong>?</h3></br>
+<head>
+  <h1>Welcome to The Gossip Project!</h1></br>
+  <h3>Hey! What's up my <strong>nigga</strong>?</h3></br>
 
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+</head>
 
-<button>Send us your best gossip</button></br></br>
+<body>
 
-    <p> <% @gossips.each_with_index do |gossip,index| %>
-      <%= gossip.user.first_name %> <%= gossip.user.last_name %> has written : <strong><%= gossip.title %></strong><br>
-      Find the page of this gossip and the info on his author <a href="/potins/<%= gossip.id %>">here</a>.</br>
-      _________________________________________________________</br>
-      <% end %>
-    </p>
+<a href="/gossips/new" class="btn btn-primary">Send us your best gossips.</a> </br></br>
+
+  <p> <% @gossips.each_with_index do |gossip,index| %>
+   <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card  mb-2 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary"> <%= gossip.user.first_name %> <%= gossip.user.last_name %> </strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#"><%= gossip.title %></a>
+              </h3>
+              <div class="mb-1 text-muted"><%= gossip.created_at %></div>
+                <a href="/potins/<%= gossip.id %>">Find the page of this gossip and the info on his author here.</a>
+            </div>
+          </div>
+        </div>
+    </div>   
+  <% end %>      
+
+</body>
+
